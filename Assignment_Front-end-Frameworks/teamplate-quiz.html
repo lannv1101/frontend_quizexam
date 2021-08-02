@@ -1,0 +1,62 @@
+<div class="row">
+  <div class="col text-center mt-3" ng-show="!inProgess">
+    <button class="btn btn-primary" ng-click="start()"  >Start the Quiz</button>
+  </div>
+
+</div>
+
+
+
+<div id="quizContainer" class="container" ng-show="inProgess">
+  <div class="row" ng-show="quizOver">
+    <div class="col text-center mt-3" ng-show="quizOver">
+      <button class="btn btn-primary" ng-click="reset()">Play again</button>
+      <div id="result" class="container result" style="display:contents;">
+        <h1 class="mt-5">YOUR SCORE: {{score}}/100</h1>
+      </div>
+
+
+
+    </div>
+
+  </div>
+  <div class="example" ng-show="!quizOver">
+    <div class="time">
+      <label>
+        <h1>  
+            
+       {{counter|counter|date:'mm:ss'}}
+        </h1>
+      </label>
+    </div>
+    <div class="time">
+      <label>
+        <h4>Câu: {{id}}/10</h4>
+      </label>
+    </div>
+    <div class="title">{{subjectsName}}</div>
+    <div id="question" class="question">{{id}}.{{question}}</div>
+    <label class="option" ng-repeat="op in options"><input type="radio" name="answer" value="{{op.Id}}" /> <span
+        id="opt1">{{op.Text}}</span></label>
+
+
+    <div class="" ng-show="!answerMode">
+      <button id="nextButton" class="next-btn" ng-click="nextQuestion();">Next Question</button>
+
+    </div>
+    <button id="backButton" class="back-btn" ng-click="checkAnswer();">Submit</button>
+    <h4><div id="submit" class="text-center mt-2" ></div></h4>
+
+
+
+
+   <!----
+  <div class="" ng-show="!answerMode">
+      <button id="submitButton" class="submit-btn" ng-click="checkAnswer()">Submit</button>
+    
+    </div>
+  
+  --> 
+  </div>
+  
+</div>

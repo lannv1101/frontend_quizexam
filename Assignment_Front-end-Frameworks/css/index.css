@@ -1,0 +1,22 @@
+.bg-img{
+background-image:url(../images/banner-fpt.jpg) ;
+
+width: 100%;
+height: 400px;
+
+
+
+margin-right: 1000px;
+}
+.NameMonHoc:hover{
+    color: #f36523;
+   
+
+}
+.bg-textaside:hover{
+    background-color: #f36523;
+   
+}
+.color-subname:hover{
+    color: white;
+}

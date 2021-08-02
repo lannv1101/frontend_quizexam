@@ -1,0 +1,64 @@
+<div  >
+<article class="container">
+  <h2 class="pb-2 border-bottom">Các bài thi trắc nghiệm </h2>
+  <nav  aria-label="Page navigation example" >
+   <ul class="pagination">
+     <button class="btn btn-primary" ng-click="first()">First</button>
+           
+     <button class="btn btn-secondary ml-2" ng-click="prev()">Preview</button> 
+     <button class="btn btn-secondary ml-2" ng-click="next()">Next</button>
+              
+     <button class="btn btn-primary ml-2" ng-click="last()">Last</button>
+   </ul>
+ </nav>
+  <div class="row" >
+  <div class="col-sm-4" id="custom-cards"  ng-repeat="sub in list_subject|limitTo:6:begin">
+    <div class="row row-cols-4 align-items-stretch py-5 h-100" >
+      <div class="col"   >
+        <a href="#!quiz/{{sub.Id}}/{{sub.Name}}" >
+        <div class="card card-cover h-100 overflow-hidden text-white bg-dark rounded-5 shadow-lg img-fluid" style="background-image:linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),  url('images/logos/{{sub.Logo}}'); ">
+          <div class="d-flex flex-column h-100 p-5 pb-3 text-white text-shadow-1">
+            <h2 class="pt-5 mt-5 mb-4 display-6 lh-1 fw-bold NameMonHoc">{{sub.Name}}</h2>
+            <ul class="d-flex list-unstyled mt-auto">
+              <li class="me-auto">
+                <img src="images/logo-fpt.jpg" alt="Bootstrap" width="32" height="32" class="rounded-circle border border-white">
+              </li>
+              <li class="d-flex align-items-center me-3">
+                <svg class="bi me-2" width="1em" height="1em"><use xlink:href="#geo-fill"/></svg>
+                <small>FPT</small>
+              </li>
+              <li class="d-flex align-items-center">
+                <svg class="bi me-2" width="1em" height="1em"><use xlink:href="#calendar3"/></svg>
+                <small>3d</small>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </a>
+      </div>
+  
+     
+  
+      
+    </div>
+    
+  </div>
+  
+  
+ </div>
+ 
+ 
+ 
+ 
+ </article>
+</div>
+ 
+       
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 

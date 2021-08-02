@@ -1,0 +1,113 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>Cập nhật tài khoản</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <style>
+        .bd-placeholder-img {
+          font-size: 1.125rem;
+          text-anchor: middle;
+          -webkit-user-select: none;
+          -moz-user-select: none;
+          user-select: none;
+        }
+        a{
+            margin-top: 20px;
+        }
+        h1{
+            margin-right: 60px;
+        }
+        .bg{
+            background-image: url(images/banner-login.jpg);
+            
+            
+        }
+  
+        @media (min-width: 768px) {
+          .bd-placeholder-img-lg {
+            font-size: 3.5rem;
+          }
+        }
+      </style>
+      <link rel="stylesheet" href="css/login.css">
+      <script src="js/angular.min.js"></script>
+    <script src="js/angular-route.js"></script>
+    <script src="js/angular-cookies.js"></script>
+    <script src="js/app.js"></script>
+</head>
+  <body ng-app="myApp">
+    <div class="ccol-xl-10 col-xxl-8 px-4 py-5 bg" ng-controller="cookies">
+        <div class="row align-items-center g-5 py-5">
+          <div class="col-lg-7 text-center text-lg-start">
+            <h1 style="color: white;" class="display-4 fw-bold lh-1 mb-3 ">Cập nhật tài khoản</h1>
+            <p  class="col-lg-10 fs-4">
+             
+            </p>
+          </div>
+          <div class="col-10 mx-auto col-lg-5">
+            <form class="p-5 border rounded-3 bg-light" ng-controller="changeprofileCtrl" name="changeForm">
+              <div class="form-floating mb-3">
+              
+                <label for="floatingInput">Họ và Tên</label>
+                <input type="text" ng-model="fullname" name="txtFullname"  class="form-control" id="floatingInput" value="{{taikhoan.fullname}}" placeholder="{{taikhoan.fullname}}" required >
+                <span class=" alert-danger form-control" ng-show="changeForm.txtFullname.$error.required">Họ và tên
+                  không để trống</span>
+              </div>
+              <div class="form-floating mb-3">
+                
+                <label for="floatingInput">Địa chỉ Email</label>
+                <input type="email"  ng-model="email" name="txtEmail" class="form-control" id="floatingInput"  value="{{taikhoan.email}}" placeholder="{{taikhoan.email}}" required>
+                <span class=" alert-danger form-control" ng-show="changeForm.txtEmail.$error.required">Email
+                  không để trống</span>
+              </div>
+              <div class="form-floating mb-3">
+                <label for="floatingInput">Ngày Sinh</label>
+                <input type="date"  ng-model="birthday" name="txtBirthday" class="form-control" id="floatingInput" value="{{taikhoan.birthday}}" placeholder="{{taikhoan.birthday}}" required >
+                <span class=" alert-danger form-control" ng-show="changeForm.txtBirthday.$error.required">Email
+                  không để trống</span>
+              </div>
+              <div class="form-floating mb-3">
+                <label for="floatingInput">Giới tính:  </label>
+                <input ng-model="gender" type="radio" value="true"> Nam
+                <input ng-model="gender" type="radio" value="false"> Nữ
+               
+              </div>
+              <!-- <div class="form-floating mb-3">
+                <label for="floatingPassword">Tên tài khoản</label>
+                <input ng-maxlength="20" type="text" ng-model="username" name="txtUsername" class="form-control" id="floatingPassword"  value="{{taikhoan.username}}" placeholder="{{taikhoan.username}}" required>
+                <span  ng-show="changeForm.txtUsername.$error.maxlength">Tên đăng
+                  nhập không quá 20 ký tự</span>
+                  <span class=" alert-danger form-control" ng-show="changeForm.txtUsername.$error.required">Tên đăng
+                    nhập không để trống</span>
+              </div> -->
+              <div class="form-floating mb-3">
+                <label for="floatingPassword">Mật Khẩu</label>
+                <input ng-minlength="3" type="password" ng-model="password" name="txtPassword" class="form-control" id="floatingPassword"  value="{{taikhoan.password}}" placeholder="{{taikhoan.password}}"required>
+                <span class=" alert-danger form-control" ng-show="changeForm.txtPassword.$error.required">Mật khẩu
+                  không để trống</span>
+                  <small id="passwordHelp" ng-show="changeForm.txtPassword.$error.minlength" class="text-muted">Mật khẩu tối thiểu 3 kí tự</small>
+              
+              </div>
+              
+              <button class=" w-100 btn btn-lg btn-primary"  ng-click="putdata()">Cập nhật</button>
+            
+           
+              <hr class="my-4">
+              <small class="text-muted"><a href="index.html">Quai lại Trang Chủ</a></small>
+            </form>
+          </div>
+        </div>
+      </div>
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    
+</body>
+</html>
